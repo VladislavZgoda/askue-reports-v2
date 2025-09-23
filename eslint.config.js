@@ -4,6 +4,7 @@ import reactHooks from "eslint-plugin-react-hooks";
 import reactRefresh from "eslint-plugin-react-refresh";
 import tseslint from "typescript-eslint";
 import pluginRouter from "@tanstack/eslint-plugin-router";
+import pluginQuery from "@tanstack/eslint-plugin-query";
 import eslintConfigPrettier from "eslint-config-prettier/flat";
 import { defineConfig, globalIgnores } from "eslint/config";
 
@@ -18,6 +19,7 @@ export default defineConfig([
       reactHooks.configs["recommended-latest"],
       reactRefresh.configs.vite,
       ...pluginRouter.configs["flat/recommended"],
+      ...pluginQuery.configs["flat/recommended"],
       eslintConfigPrettier,
     ],
     languageOptions: {
