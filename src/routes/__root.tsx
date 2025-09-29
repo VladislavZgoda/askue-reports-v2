@@ -12,6 +12,8 @@ import { TanStackRouterDevtools } from "@tanstack/react-router-devtools";
 import { DefaultCatchBoundary } from "~/components/DefaultCatchBoundary";
 import { NotFound } from "~/components/NotFound";
 
+import Layout from "~/components/Layout";
+
 import appCss from "~/styles.css?url";
 
 import type { ReactNode } from "react";
@@ -64,39 +66,41 @@ function RootDocument({ children }: { children: ReactNode }) {
         <HeadContent />
       </head>
       <body>
-        <div className="p-2 flex gap-2 text-lg">
-          <Link
-            to="/"
-            activeProps={{
-              className: "font-bold",
-            }}
-            activeOptions={{ exact: true }}
-          >
-            Home
-          </Link>{" "}
-          <Link
-            to="/about"
-            activeProps={{
-              className: "font-bold",
-            }}
-          >
-            About
-          </Link>{" "}
-          <Link
-            // @ts-expect-error: This is for testing.
-            to="/this-route-does-not-exist"
-            activeProps={{
-              className: "font-bold",
-            }}
-          >
-            This Route Does Not Exist
-          </Link>
-        </div>
-        <hr />
-        {children}
-        <TanStackRouterDevtools position="bottom-right" />
-        <ReactQueryDevtools buttonPosition="bottom-left" />
-        <Scripts />
+        <Layout>
+          <div className="p-2 flex gap-2 text-lg">
+            <Link
+              to="/"
+              activeProps={{
+                className: "font-bold",
+              }}
+              activeOptions={{ exact: true }}
+            >
+              Home
+            </Link>{" "}
+            <Link
+              to="/about"
+              activeProps={{
+                className: "font-bold",
+              }}
+            >
+              About
+            </Link>{" "}
+            <Link
+              // @ts-expect-error: This is for testing.
+              to="/this-route-does-not-exist"
+              activeProps={{
+                className: "font-bold",
+              }}
+            >
+              This Route Does Not Exist
+            </Link>
+          </div>
+          <hr />
+          {children}
+          <TanStackRouterDevtools position="bottom-right" />
+          <ReactQueryDevtools buttonPosition="bottom-left" />
+          <Scripts />
+        </Layout>
       </body>
     </html>
   );
