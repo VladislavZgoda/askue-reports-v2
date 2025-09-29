@@ -99,8 +99,8 @@ function RootDocument({ children }: { children: ReactNode }) {
           {children}
           <TanStackRouterDevtools position="bottom-right" />
           <ReactQueryDevtools buttonPosition="bottom-left" />
-          <Scripts />
         </Layout>
+        <Scripts />
       </body>
     </html>
   );
