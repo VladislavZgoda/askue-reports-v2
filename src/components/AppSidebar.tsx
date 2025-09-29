@@ -6,10 +6,14 @@ import {
   SidebarHeader,
 } from "./ui/sidebar";
 
+import { SearchForm } from "./SearchForm";
+
 export function AppSidebar() {
   return (
     <Sidebar>
-      <SidebarHeader />
+      <SidebarHeader>
+        <SearchForm />
+      </SidebarHeader>
       <SidebarContent>
         <SidebarGroup />
         <SidebarGroup />
