@@ -1,7 +1,5 @@
 import handler from "@tanstack/react-start/server-entry";
 
-process.loadEnvFile(".env.local");
-
 const requiredServerEnv = ["DATABASE_URL"] as const;
 
 for (const key of requiredServerEnv) {
