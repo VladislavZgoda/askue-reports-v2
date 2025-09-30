@@ -18,10 +18,13 @@ import appCss from "~/styles.css?url";
 
 import type { ReactNode } from "react";
 import type { QueryClient } from "@tanstack/react-query";
+import { getCookieByName } from "~/utils/cookie";
 
 export const Route = createRootRouteWithContext<{
   queryClient: QueryClient;
 }>()({
+  loader: async () =>
+    await getCookieByName({ data: { name: "sidebar_state" } }),
   head: () => ({
     meta: [
       {
