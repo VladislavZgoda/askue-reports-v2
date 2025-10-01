@@ -1,4 +1,4 @@
-import { SidebarProvider, SidebarTrigger } from "./ui/sidebar";
+import { SidebarProvider, SidebarTrigger, SidebarInset } from "./ui/sidebar";
 import { AppSidebar } from "./AppSidebar";
 import { getRouteApi } from "@tanstack/react-router";
 
@@ -10,10 +10,12 @@ export default function Layout({ children }: { children: React.ReactNode }) {
   return (
     <SidebarProvider defaultOpen={defaultOpen}>
       <AppSidebar />
-      <main>
-        <SidebarTrigger />
-        {children}
-      </main>
+      <SidebarInset>
+        <main>
+          <SidebarTrigger />
+          {children}
+        </main>
+      </SidebarInset>
     </SidebarProvider>
   );
 }
