@@ -30,9 +30,7 @@ export function AppSidebar() {
       </SidebarHeader>
       <SidebarContent>
         <SidebarGroup>
-          <SidebarGroupLabel className="text-sm">
-            Список ТП
-          </SidebarGroupLabel>
+          <SidebarGroupLabel className="text-sm">Список ТП</SidebarGroupLabel>
           <SidebarGroupAction title="Добавить ТП">
             <Plus /> <span className="sr-only">Добавить ТП</span>
           </SidebarGroupAction>
