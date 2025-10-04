@@ -33,15 +33,16 @@
     "clsx": "^2.1.1",
     "drizzle-orm": "^0.44.5",
     "lucide-react": "^0.544.0",
+    "nitro": "npm:nitro-nightly",
     "postgres": "^3.4.7",
     "react": "^19.1.1",
     "react-dom": "^19.1.1",
     "tailwind-merge": "^3.3.1",
-    "tailwindcss": "^4.1.13",
-    "nitro": "npm:nitro-nightly"
+    "tailwindcss": "^4.1.13"
   },
   "devDependencies": {
     "@eslint/js": "^9.35.0",
+    "@tanstack/devtools-vite": "^0.3.3",
     "@tanstack/eslint-plugin-query": "^5.90.1",
     "@tanstack/eslint-plugin-router": "^1.131.2",
     "@tanstack/react-router-ssr-query": "^1.132.2",
