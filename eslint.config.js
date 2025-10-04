@@ -11,7 +11,7 @@ import eslintConfigPrettier from "eslint-config-prettier/flat";
 import { defineConfig, globalIgnores } from "eslint/config";
 
 export default defineConfig([
-  globalIgnores(["dist"]),
+  globalIgnores([".nitro", ".output", "src/routeTree.gen.ts"]),
   {
     files: ["**/*.{ts,tsx}"],
     extends: [
@@ -36,6 +36,5 @@ export default defineConfig([
         tsconfigRootDir: import.meta.dirname,
       },
     },
-    ignores: ["src/routeTree.gen.ts"],
   },
 ]);
