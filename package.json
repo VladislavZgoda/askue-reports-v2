@@ -10,7 +10,7 @@
     "db:migrate": "tsx src/db/migrate.ts",
     "lint": "eslint .",
     "format": "prettier . --write",
-    "preview": "vite preview"
+    "start": "node --env-file=.env.local .output/server/index.mjs"
   },
   "dependencies": {
     "@prisma/adapter-pg": "^6.16.2",
@@ -37,7 +37,8 @@
     "react": "^19.1.1",
     "react-dom": "^19.1.1",
     "tailwind-merge": "^3.3.1",
-    "tailwindcss": "^4.1.13"
+    "tailwindcss": "^4.1.13",
+    "nitro": "npm:nitro-nightly"
   },
   "devDependencies": {
     "@eslint/js": "^9.35.0",
