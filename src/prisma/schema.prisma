@@ -1,10 +1,18 @@
 generator client {
-  provider        = "prisma-client"
-  output          = "./generated/prisma"
-  engineType      = "client"
+  provider   = "prisma-client"
+  output     = "./generated/prisma"
+  engineType = "client"
+  runtime    = "nodejs"
 }
 
 datasource db {
   provider = "postgresql"
   url      = env("DATABASE_URL")
+}
+
+model TransformerSubstation {
+  id        Int      @id @default(autoincrement())
+  name      String   @unique @db.VarChar(15)
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
 }
