@@ -1,8 +1,6 @@
 node_modules
-dist
-dist-ssr
-*.local
 src/routeTree.gen.ts
 src/prisma/generated/prisma/internal
 .nitro
 .output
+.env
