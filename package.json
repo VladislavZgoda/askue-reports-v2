@@ -10,7 +10,7 @@
     "db:migrate": "tsx src/db/migrate.ts",
     "lint": "eslint .",
     "format": "prettier . --write",
-    "start": "node --env-file=.env.local .output/server/index.mjs"
+    "start": "node --env-file=.env .output/server/index.mjs"
   },
   "dependencies": {
     "@prisma/adapter-pg": "^6.16.2",
