@@ -20,12 +20,25 @@ import appCss from "~/styles.css?url";
 import type { ReactNode } from "react";
 import type { QueryClient } from "@tanstack/react-query";
 import { getCookieByName } from "~/utils/cookie";
+import { substationsQueryOptions } from "~/server/services/transformer-substation";
 
 export const Route = createRootRouteWithContext<{
   queryClient: QueryClient;
 }>()({
-  loader: async () =>
-    await getCookieByName({ data: { name: "sidebar_state" } }),
+  loader: async ({ context }) => {
+    const sidebarCookie = await getCookieByName({
+      data: { name: "sidebar_state" },
+    });
+    const data = await context.queryClient.ensureQueryData(
+      substationsQueryOptions(),
+    );
+
+    return {
+      sidebarCookie,
+      data,
+    };
+  },
+
   head: () => ({
     meta: [
       {

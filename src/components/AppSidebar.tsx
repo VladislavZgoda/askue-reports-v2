@@ -19,6 +19,7 @@ import {
 } from "./ui/dropdown-menu";
 
 import { SearchForm } from "./SearchForm";
+import { NavSubstations } from "./NavSubstations";
 import { User2, ChevronUp, Plus } from "lucide-react";
 
 export function AppSidebar() {
@@ -34,6 +35,9 @@ export function AppSidebar() {
           <SidebarGroupAction title="Добавить ТП">
             <Plus /> <span className="sr-only">Добавить ТП</span>
           </SidebarGroupAction>
+        </SidebarGroup>
+        <SidebarGroup>
+          <NavSubstations />
         </SidebarGroup>
       </SidebarContent>
       <SidebarFooter>
