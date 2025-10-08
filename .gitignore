@@ -1,6 +1,6 @@
 node_modules
 src/routeTree.gen.ts
-src/prisma/generated/
+src/server/prisma/generated/
 .nitro
 .output
 .env
