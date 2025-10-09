@@ -6,8 +6,6 @@ import {
   SidebarContent,
   SidebarFooter,
   SidebarGroup,
-  SidebarGroupLabel,
-  SidebarGroupAction,
   SidebarHeader,
 } from "./ui/sidebar";
 
@@ -20,7 +18,8 @@ import {
 
 import { SearchForm } from "./SearchForm";
 import { NavSubstations } from "./NavSubstations";
-import { User2, ChevronUp, Plus } from "lucide-react";
+import { SubstationCreation } from "./SubstationCreation";
+import { User2, ChevronUp } from "lucide-react";
 
 export function AppSidebar() {
   return (
@@ -28,14 +27,9 @@ export function AppSidebar() {
       <SidebarHeader>
         <span className="text-center font-semibold">Отчеты АСКУЭ</span>
         <SearchForm />
+        <SubstationCreation />
       </SidebarHeader>
       <SidebarContent>
-        <SidebarGroup>
-          <SidebarGroupLabel className="text-sm">Список ТП</SidebarGroupLabel>
-          <SidebarGroupAction title="Добавить ТП">
-            <Plus /> <span className="sr-only">Добавить ТП</span>
-          </SidebarGroupAction>
-        </SidebarGroup>
         <SidebarGroup>
           <NavSubstations />
         </SidebarGroup>
