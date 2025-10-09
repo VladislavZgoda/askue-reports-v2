@@ -26,17 +26,11 @@ export const Route = createRootRouteWithContext<{
   queryClient: QueryClient;
 }>()({
   loader: async ({ context }) => {
-    const sidebarCookie = await getCookieByName({
+    void context.queryClient.ensureQueryData(substationsQueryOptions());
+
+    return await getCookieByName({
       data: { name: "sidebar_state" },
     });
-    const data = await context.queryClient.ensureQueryData(
-      substationsQueryOptions(),
-    );
-
-    return {
-      sidebarCookie,
-      data,
-    };
   },
 
   head: () => ({
