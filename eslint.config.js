@@ -8,6 +8,7 @@ import reactDom from "eslint-plugin-react-dom";
 import pluginRouter from "@tanstack/eslint-plugin-router";
 import pluginQuery from "@tanstack/eslint-plugin-query";
 import eslintConfigPrettier from "eslint-config-prettier/flat";
+import eslintPluginZodX from "eslint-plugin-zod-x";
 import { defineConfig, globalIgnores } from "eslint/config";
 
 export default defineConfig([
@@ -18,12 +19,13 @@ export default defineConfig([
       js.configs.recommended,
       tseslint.configs.recommendedTypeChecked,
       tseslint.configs.stylisticTypeChecked,
-      reactHooks.configs["recommended-latest"],
+      reactHooks.configs.flat.recommended,
       reactRefresh.configs.vite,
       reactX.configs["recommended-typescript"],
       reactDom.configs.recommended,
       ...pluginRouter.configs["flat/recommended"],
       ...pluginQuery.configs["flat/recommended"],
+      eslintPluginZodX.configs.recommended,
       eslintConfigPrettier,
     ],
     languageOptions: {
