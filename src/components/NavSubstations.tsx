@@ -18,7 +18,7 @@ export function NavSubstations() {
         <SidebarMenuItem key={id}>
           <SidebarMenuButton asChild>
             <Link
-              to="/substations/$substationId"
+              to="/transformer-substations/$substationId"
               params={{ substationId: id.toString() }}
               activeProps={{
                 className: "bg-sidebar-accent text-sidebar-accent-foreground",
