@@ -1,3 +1,4 @@
+import bcrypt from "bcryptjs";
 import { db } from "./db-client";
 
 const substations = Array(20)
@@ -14,6 +15,12 @@ substations.push({ name: "ТП-166П+200П" });
 
 async function main() {
   await db.transformerSubstation.createMany({ data: substations });
+  await db.user.create({
+    data: {
+      login: "test",
+      password: await bcrypt.hash("test", 12),
+    },
+  });
 }
 
 main()
