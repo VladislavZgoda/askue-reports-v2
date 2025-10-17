@@ -10,6 +10,7 @@ import {
 import { TanStackDevtools } from "@tanstack/react-devtools";
 import { TanStackRouterDevtoolsPanel } from "@tanstack/react-router-devtools";
 import { ReactQueryDevtoolsPanel } from "@tanstack/react-query-devtools";
+import { FormDevtoolsPlugin } from "@tanstack/react-form-devtools";
 import { DefaultCatchBoundary } from "~/components/DefaultCatchBoundary";
 import { NotFound } from "~/components/NotFound";
 
@@ -121,6 +122,7 @@ function RootDocument({ children }: { children: ReactNode }) {
               name: "Tanstack Query",
               render: <ReactQueryDevtoolsPanel />,
             },
+            FormDevtoolsPlugin(),
           ]}
         />
         <Scripts />
