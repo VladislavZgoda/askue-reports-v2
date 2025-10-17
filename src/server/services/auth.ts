@@ -39,7 +39,7 @@ export const getCurrentUserFn = createServerFn({ method: "GET" }).handler(
     const session = await useAppSession();
     const userLogin = session.data.login;
 
-    return userLogin ? userLogin : null;
+    return userLogin ?? null;
   },
 );
 
