@@ -30,6 +30,7 @@ export default defineConfig([
     ],
     rules: {
       "no-throw-literal": "off",
+      "@typescript-eslint/only-throw-error": "off",
     },
     languageOptions: {
       ecmaVersion: 2020,
