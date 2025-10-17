@@ -3,7 +3,7 @@ import { createServerFn } from "@tanstack/react-start";
 import { queryOptions } from "@tanstack/react-query";
 import { db } from "../prisma/db-client";
 
-const getSubstations = createServerFn({ method: "GET" }).handler(async () => {
+const getSubstationsFn = createServerFn({ method: "GET" }).handler(async () => {
   return await db.transformerSubstation.findMany({
     select: { id: true, name: true },
   });
@@ -12,7 +12,7 @@ const getSubstations = createServerFn({ method: "GET" }).handler(async () => {
 export const substationsQueryOptions = () =>
   queryOptions({
     queryKey: ["substations"],
-    queryFn: () => getSubstations(),
+    queryFn: () => getSubstationsFn(),
   });
 
 const idSchema = z.object({
@@ -22,7 +22,7 @@ const idSchema = z.object({
     .pipe(z.int()),
 });
 
-const getSubstation = createServerFn({ method: "GET" })
+const getSubstationFn = createServerFn({ method: "GET" })
   .inputValidator(idSchema)
   .handler(async ({ data }) => {
     return await db.transformerSubstation.findFirst({
@@ -36,5 +36,5 @@ const getSubstation = createServerFn({ method: "GET" })
 export const substationQueryOptions = (substationId: string) =>
   queryOptions({
     queryKey: ["substation", substationId],
-    queryFn: () => getSubstation({ data: { id: substationId } }),
+    queryFn: () => getSubstationFn({ data: { id: substationId } }),
   });
