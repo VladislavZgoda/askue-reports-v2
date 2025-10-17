@@ -28,6 +28,9 @@ export default defineConfig([
       eslintPluginZodX.configs.recommended,
       eslintConfigPrettier,
     ],
+    rules: {
+      "no-throw-literal": "off",
+    },
     languageOptions: {
       ecmaVersion: 2020,
       globals: globals.browser,
