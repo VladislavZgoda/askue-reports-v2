@@ -3,7 +3,7 @@ import { useSuspenseQuery } from "@tanstack/react-query";
 import { substationQueryOptions } from "~/server/services/transformer-substation";
 import { NotFound } from "~/components/NotFound";
 
-export const Route = createFileRoute("/transformer-substations/$substationId")({
+export const Route = createFileRoute("/_mainLayout/transformer-substations/$substationId")({
   loader: ({ params, context }) =>
     context.queryClient.ensureQueryData(
       substationQueryOptions(params.substationId),
