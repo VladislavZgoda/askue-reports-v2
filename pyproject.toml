@@ -1,0 +1,18 @@
+[project]
+name = "askue-reports-v2"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+authors = [
+    { name = "VladislavZgoda", email = "www.vlad78@yandex.ru" }
+]
+requires-python = ">=3.14"
+dependencies = [
+    "django>=6.1.1",
+    "ruff>=0.16.7",
+    "ty>=0.0.80",
+]
+
+[project.scripts]
+askue-reports-v2 = "askue_reports_v2:main"
+
