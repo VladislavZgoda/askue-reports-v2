@@ -6,6 +6,7 @@ dist/
 wheels/
 *.egg-info
 db.sqlite3
+reports/static/css/tailwindcss
 
 # Virtual environments
 .venv
